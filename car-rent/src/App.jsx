@@ -4,7 +4,8 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  Route
+  Route,
+  Navigate
 } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -96,6 +97,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       </Route>
     </Route>
     <Route path="*" element={<NotFound />} />
+    <Route path="/car-rental" element={<Navigate to='/' />} />
   </Route>
 ))
 

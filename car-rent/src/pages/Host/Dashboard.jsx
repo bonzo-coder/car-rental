@@ -14,9 +14,9 @@ export default function Dashboard() {
 
     function renderCarElements(cars) {
         const hostCarsEls = cars.map((car) => (
-            <div className="host-van-single" key={car.id}>
+            <div className="host-car-single" key={car.id}>
                 <img src={car.imgURL} alt={`Photo of ${car.name}`} />
-                <div className="host-van-info">
+                <div className="host-car-info">
                     <h3>{car.name}</h3>
                     <p>${car.price}/day</p>
                 </div>
@@ -25,7 +25,7 @@ export default function Dashboard() {
         ))
 
         return (
-            <div className="host-vans-list">
+            <div className="host-cars-list">
                 <section>{hostCarsEls}</section>
             </div>
         )
@@ -49,7 +49,7 @@ export default function Dashboard() {
                 </p>
                 <Link to="reviews">Details</Link>
             </section>
-            <section className="host-dashboard-vans">
+            <section className="host-dashboard-cars">
                 <div className="top">
                     <h2>Your listed cars</h2>
                     <Link to="cars">View all</Link>

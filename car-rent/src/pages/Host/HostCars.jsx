@@ -16,11 +16,11 @@ export default function HostCars() {
             <Link
                 to={car.id}
                 key={car.id}
-                className="host-van-link-wrapper"
+                className="host-car-link-wrapper"
             >
-                <div className="host-van-single" key={car.id}>
+                <div className="host-car-single" key={car.id}>
                     <img src={car.imgURL} alt={`Photo of ${car.name}`} />
-                    <div className="host-van-info">
+                    <div className="host-car-info">
                         <h3>{car.name}</h3>
                         <p>${car.price}/day</p>
                     </div>
@@ -28,7 +28,7 @@ export default function HostCars() {
             </Link>
         ))
         return (
-            <div className="host-vans-list">
+            <div className="host-cars-list">
                 <section>
                     {hostCarsEls}
                 </section>
@@ -39,7 +39,7 @@ export default function HostCars() {
 
     return (
         <section>
-            <h1 className="host-vans-title">Your listed cars</h1>
+            <h1 className="host-cars-title">Your listed cars</h1>
             <React.Suspense fallback={<h2>Loading cars...</h2>}>
                 <Await resolve={dataPromise.cars}>
                     {renderCarElements}

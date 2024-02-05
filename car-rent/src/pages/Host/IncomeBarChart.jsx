@@ -1,5 +1,4 @@
 import { BarChart } from '@mui/x-charts/BarChart';
-import React from "react";
 
 function dataNames (choice, props) {
     console.log(props)

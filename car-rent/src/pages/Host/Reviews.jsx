@@ -5,16 +5,16 @@ export default function Reviews() {
     const reviewsData = [
         {
             rating: 5,
-            name: "Elliot",
-            date: "January 3, 2023",
-            text: "The beach bum is such an awesome van! Such a comfortable trip. We had it for 2 weeks and there was not a single issue. Super clean when we picked it up and the host is very comfortable and understanding. Highly recommend!",
+            name: "Barbara",
+            date: "January 6, 2024",
+            text: "The BMW 3 is a super car! Such a sporty, good handling car. Great condition of the car. Super clean. Feels like new. Highly recommend!",
             id: "1",
         },
         {
             rating: 5,
-            name: "Sandy",
-            date: "December 12, 2022",
-            text: "This is our third time using the Modest Explorer for our travels and we love it! No complaints, absolutely perfect!",
+            name: "Sam",
+            date: "December 18, 2023",
+            text: "This is our second time using this car rental.Now I can just say - perfect as always.",
             id: "2",
         },
     ]

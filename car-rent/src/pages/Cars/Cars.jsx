@@ -36,7 +36,7 @@ export default function Cars() {
             : cars
     
         const carElements = displayedCars.map(car => (
-            <div key={car.id} className="van-tile">
+            <div key={car.id} className="car-tile">
                 <Link
                     to={car.id}
                     state={{
@@ -47,35 +47,35 @@ export default function Cars() {
                     <div className="img-container">
                         <img src={car.imgURL} />
                     </div>
-                    <div className="van-info">
+                    <div className="car-info">
                         <h3>{car.name}</h3>
                         <p>${car.price}<span>/day</span></p>
                     </div>
-                    <i className={`van-type ${car.type} selected`}>{car.type}</i>
+                    <i className={`car-type ${car.type} selected`}>{car.type}</i>
                 </Link>
             </div>
         ))
         return (
             <>
-                <div className="van-list-filter-buttons">
+                <div className="car-list-filter-buttons">
                     <button
                         onClick={() => handleFilterChange("type", "sport")}
                         className={
-                            `van-type sport
+                            `car-type sport
                         ${typeFilter === "sport" ? "selected" : ""}`
                         }
                     >Sport</button>
                     <button
                         onClick={() => handleFilterChange("type", "luxury")}
                         className={
-                            `van-type luxury 
+                            `car-type luxury 
                         ${typeFilter === "luxury" ? "selected" : ""}`
                         }
                     >Luxury</button>
                     <button
                         onClick={() => handleFilterChange("type", "city")}
                         className={
-                            `van-type city 
+                            `car-type city 
                         ${typeFilter === "city" ? "selected" : ""}`
                         }
                     >City</button>
@@ -83,12 +83,12 @@ export default function Cars() {
                     {typeFilter ? (
                         <button
                             onClick={() => handleFilterChange("type", null)}
-                            className="van-type clear-filters"
+                            className="car-type clear-filters"
                         >Clear filter</button>
                     ) : null}
 
                 </div>
-                <div className="van-list">
+                <div className="car-list">
                     {carElements}
                 </div>
             </>
@@ -96,7 +96,7 @@ export default function Cars() {
     }
 
     return (
-        <div className="van-list-container">
+        <div className="car-list-container">
             <h1>Explore our car options</h1>
             <React.Suspense fallback={<h2>Loading cars...</h2>}>
                 <Await resolve={dataPromise.cars}>

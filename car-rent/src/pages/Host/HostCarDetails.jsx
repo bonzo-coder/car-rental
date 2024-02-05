@@ -25,12 +25,12 @@ export default function HostCarDetail() {
                 className="back-button"
             >&larr; <span>Back to all cars</span></Link>
 
-            <div className="host-van-detail-layout-container">
-                <div className="host-van-detail">
+            <div className="host-car-detail-layout-container">
+                <div className="host-car-detail">
                     <img src={currentCar.imgURL} />
-                    <div className="host-van-detail-info-text">
+                    <div className="host-car-detail-info-text">
                         <i
-                            className={`van-type van-type-${currentCar.type}`}
+                            className={`car-type car-type-${currentCar.type}`}
                         >
                             {currentCar.type}
                         </i>
@@ -39,7 +39,7 @@ export default function HostCarDetail() {
                     </div>
                 </div>
 
-                <nav className="host-van-detail-nav">
+                <nav className="host-car-detail-nav">
                     <NavLink
                         to="."
                         end
