@@ -42,7 +42,8 @@ export async function getCar(id) {
 }
 
 export async function getHostCars() {
-    const q = query(carsCollectionRef, where("hostId", "==", 123))
+    const userId = await parseInt(localStorage.getItem("loggedId"))
+    const q = query(carsCollectionRef, where("hostId", "==", userId))
     const querySnapshot = await getDocs(q)
     const dataArr = querySnapshot.docs.map(doc => ({
         ...doc.data(),
