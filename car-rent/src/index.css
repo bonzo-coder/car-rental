@@ -871,3 +871,21 @@ img.graph {
   color: #ff8c38;
   margin-right: 5px;
 }
+
+.passwordDetails > span {
+  filter: blur(3px);
+}
+
+.passwordDetails > span:hover {
+  color: red;
+  filter: blur(0px);
+}
+
+.passwordDetails {
+  animation: cssAnimation 3s 0s forwards;
+  opacity: 0;
+}
+
+@keyframes cssAnimation {
+  to   { opacity: 1; }
+}

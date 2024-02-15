@@ -2,21 +2,17 @@
 import {
     useLoaderData,
     useNavigation,
-    useNavigate,
     Form,
     redirect,
     useActionData,
-    Navigate,
 } from "react-router-dom"
 import { loginUser } from "../api"
 
 export function loader({ request }) {
-    console.log(request)
     return new URL(request.url).searchParams.get("message")
 }
 
 export async function action({ request }) {
-    console.log("action")
     
     const formData = await request.formData()
     const email = formData.get("email")
@@ -27,14 +23,11 @@ export async function action({ request }) {
     try {
         
         const data = await loginUser({ email, password })
-        console.log(data)
-        console.log(pathname)
         const response = redirect(pathname)
         response.body = true // It's silly, but it works
         localStorage.setItem("loggedin", true)
         return response
     } catch(err) {
-        console.log(err)
         return err.message
     }
 }
@@ -74,6 +67,10 @@ export default function Login() {
                         : "Log in"
                     }
                 </button>
+                <div className="allDetails">
+                <p className="passwordDetails"> Login details <span><br/> login1: car1@wp.pl  Pass: 123</span></p>
+                <p className="passwordDetails"> Login details <span><br/> login2: car2@wp.pl  Pass: 246</span></p>
+                </div>
             </Form>
         </div>
     )
