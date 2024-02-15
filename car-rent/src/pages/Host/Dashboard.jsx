@@ -9,6 +9,8 @@ export async function loader({ request }) {
     return defer({ cars: getHostCars() })
 }
 
+
+
 export default function Dashboard() {
     const loaderData = useLoaderData()
 
@@ -23,7 +25,7 @@ export default function Dashboard() {
                 <Link to={`cars/${car.id}`}>View</Link>
             </div>
         ))
-
+        
         return (
             <div className="host-cars-list">
                 <section>{hostCarsEls}</section>
@@ -31,13 +33,20 @@ export default function Dashboard() {
         )
     }
 
+        const loggedUser = localStorage.getItem("loggedId")
+        // income for both user different hardCoded
+        let userIncome = 0;
+
+        loggedUser == 123 ? userIncome+=2410 : userIncome+=1050 ; 
+        // so it just looks nice on page...
+        
     return (
         <>
             <section className="host-dashboard-earnings">
                 <div className="info">
-                    <h1>Welcome!</h1>
+                    <h1>Welcome user {loggedUser}!</h1>
                     <p>Income last <span>30 days</span></p>
-                    <h2>$2,260</h2>
+                    <h2>$ {userIncome}</h2>
                 </div>
                 <Link to="income">Details</Link>
             </section>
