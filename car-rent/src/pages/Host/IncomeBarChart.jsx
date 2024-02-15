@@ -1,7 +1,7 @@
 import { BarChart } from '@mui/x-charts/BarChart';
 
 function dataNames (choice, props) {
-    console.log(props)
+    
     let arrayDataNames = [];
     
     for (let i=0; i<props.transactionsData.length; i++) {
@@ -16,7 +16,7 @@ function dataNames (choice, props) {
             arrayDataNames.push(props.transactionsData[i].amount)
         }
     }
-    console.log(arrayDataNames)
+    
     return arrayDataNames
 }
 

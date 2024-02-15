@@ -7,7 +7,7 @@ export async function loader({ request }) {
     await requireAuth(request)
     return defer({ cars: getHostCars() })
 }
-console.log("bylem w host cars")
+
 export default function HostCars() {
     const dataPromise = useLoaderData()
 
@@ -27,6 +27,7 @@ export default function HostCars() {
                 </div>
             </Link>
         ))
+
         return (
             <div className="host-cars-list">
                 <section>
